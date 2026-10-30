@@ -1,0 +1,54 @@
+CONFIDENTIAL PROPRIETARY SOFTWARE LICENSE & PERPETUAL ATTRIBUTION AGREEMENT
+
+Copyright (c) 2026 Surya Sushad <suryasushad@icloud.com>
+All Rights Reserved.
+
+PRIMARY AUTHOR & ARCHITECT: Surya Sushad (GitHub: @Sury41322)
+
+1. CONFIDENTIALITY & EVALUATION GRANT
+This software, source code, documentation, architecture, and associated assets (the "Software") 
+are the confidential and proprietary intellectual property of Surya Sushad ("Author"). 
+This Software is provided strictly for review, evaluation, and authorized deployment purposes 
+under the express condition of confidentiality.
+
+2. IRREVOCABLE ATTRIBUTION & AUTHORSHIP REQUIREMENT
+Under all circumstances—including but not limited to the use, execution, modification, 
+adaptation, translation, extension, incorporation, compilation, distribution, deployment, 
+or commercialization of this Software or any part thereof—the original authorship credit 
+and copyright ownership of Surya Sushad MUST be preserved in perpetuity.
+
+Specifically:
+(a) Visual and Interface Attribution: All graphical user interfaces, headers, footers, 
+    and credit badges attributing the Software to "Surya Sushad" must remain intact 
+    and visibly displayed.
+(b) Source Code Notices: All copyright notices, author tags (@author Surya Sushad), 
+    and licensing headers located in source code files, configuration files, and package 
+    manifests must remain unaltered.
+(c) Metadata and Documentation: All repository documentation, README files, API schemas, 
+    and package.json metadata must continue to accurately identify Surya Sushad as 
+    the original author, creator, and lead architect.
+(d) Prohibition of Removal or Replacement: Neither the receiving company, its affiliates, 
+    contractors, employees, nor any third party shall remove, replace, obscure, mask, 
+    or substitute the author's name (Surya Sushad), nor claim or represent authorship 
+    of this codebase or its underlying architectural implementation.
+
+3. INTELLECTUAL PROPERTY OWNERSHIP
+Except for explicit third-party open-source libraries identified in package manifests, 
+all rights, title, interest, and intellectual property in and to the Software—including 
+source code, system design, prompts, integration pipelines, and documentation—remain 
+the exclusive property of Surya Sushad.
+
+4. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, 
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS 
+IN THE SOFTWARE.
+
+================================================================================
+FOR INQUIRIES OR LICENSING PERMISSIONS:
+Surya Sushad
+Email: suryasushad@icloud.com
+GitHub: https://github.com/Sury41322
+================================================================================

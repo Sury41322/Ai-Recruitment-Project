@@ -1,159 +1,117 @@
-# Turborepo starter
+# AI Technical Interviewer Platform
 
-This Turborepo starter is maintained by the Turborepo core team.
+[![Author: Surya Sushad](https://img.shields.io/badge/Author-Surya%20Sushad-indigo.svg)](https://github.com/Sury41322)
+[![License: Proprietary](https://img.shields.io/badge/License-Proprietary%20%26%20Confidential-red.svg)](LICENSE)
+[![Runtime: Bun](https://img.shields.io/badge/Runtime-Bun%20v1.4+-fbf0df.svg)](https://bun.sh)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-## Using this example
+> **CONFIDENTIAL COMPANY SUBMISSION**  
+> **Original Author & Lead Architect:** **Surya Sushad** ([suryasushad@icloud.com](mailto:suryasushad@icloud.com))  
+> **GitHub:** [@Sury41322](https://github.com/Sury41322)  
+> All intellectual property, architecture, and codebase authorship rights belong to Surya Sushad. See [LICENSE](LICENSE) and [ATTRIBUTION.md](ATTRIBUTION.md).
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
+## 📋 Overview
+
+The **AI Technical Interviewer Platform** is an intelligent candidate evaluation and technical screening system. Candidates participate in an interactive, voice-driven interview with a 3D animated avatar interviewer capable of real-time speech processing, intelligent silence nudging, adaptive conversational progression, and post-interview rubric evaluation.
+
+### ✨ Key Features
+- **Interactive 3D Avatar Interviewer:** Integrated half-body 3D mesh avatar with real-time lip synchronization, natural speech delivery, and conversational gestures.
+- **Push-to-Talk & Hotkey Input:** Clean push-to-talk microphone activation via spacebar or button controls with audio level monitoring.
+- **Adaptive Silence & Inactivity Handling:** Automated two-stage conversational nudging if a candidate hesitates or needs time to think, with automatic transition to the next question.
+- **Session & Transcript Persistence:** Full session tracking connecting candidates' technical experience and resume focus areas with their interview dialogue.
+- **Automated Performance Evaluation:** Instant scoring across overall readiness, communication, and core subject knowledge with structured feedback and improvement action items powered by Gemini AI.
+
+---
+
+## 🏛️ Project Architecture
+
+```
+Interview-Project/
+├── apps/
+│   ├── frontend/             # React 19 + Vite/Bun frontend with 3D avatar & voice interaction
+│   │   ├── src/
+│   │   │   ├── components/   # Form, Interview stage, AvatarView, Result evaluation
+│   │   │   └── lib/          # useGeminiLive conversational hook, config, audio utilities
+│   │   ├── public/avatars/   # 3D GLB model assets
+│   │   └── package.json
+│   └── backend/              # Express 5 API service with Prisma ORM & SQLite persistence
+│       ├── prisma/           # Database schema and SQLite database
+│       └── index.ts          # REST endpoints for candidate sessions
+├── packages/
+│   ├── ui/                   # Shared UI primitives
+│   ├── eslint-config/        # Monorepo linting configurations
+│   └── typescript-config/    # Monorepo TypeScript configurations
+├── LICENSE                   # Proprietary license & perpetual attribution covenant
+├── ATTRIBUTION.md            # Authorship declaration by Surya Sushad
+└── README.md                 # Project documentation
 ```
 
-## What's inside?
+---
 
-This Turborepo includes the following packages/apps:
+## 🚀 Quick Start & Setup
 
-### Apps and Packages
+### Prerequisites
+- [Bun](https://bun.sh) (v1.2+ recommended)
+- Google Gemini API Key
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `@next/eslint-plugin-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+### 1. Clone & Install Dependencies
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo build
+```bash
+bun install
 ```
 
-Without global `turbo`, use your package manager:
+### 2. Configure Environment Variables
 
-```sh
-cd my-turborepo
-npx turbo build
-bun exec turbo build
-bun exec turbo build
+Create `.env` inside `apps/frontend/` (see `apps/frontend/.env.example`):
+
+```bash
+cp apps/frontend/.env.example apps/frontend/.env
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+Set your configuration values:
+```env
+# Gemini API Key for evaluation
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+# AI Agent Conversation Webhook Endpoint
+VITE_AI_WEBHOOK_URL=http://localhost:5678/webhook/your_webhook_id_here
 
-```sh
-turbo build --filter=docs
+# Backend API URL
+VITE_BACKEND_URL=http://localhost:3001
 ```
 
-Without global `turbo`:
+### 3. Initialize Database
 
-```sh
-npx turbo build --filter=docs
-bun exec turbo build --filter=docs
-bun exec turbo build --filter=docs
+```bash
+cd apps/backend
+bunx prisma db push
+cd ../..
 ```
 
-### Develop
+### 4. Run the Development Environment
 
-To develop all apps and packages, run the following command:
+Run both frontend and backend concurrently via Turborepo:
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo dev
+```bash
+bun dev
 ```
 
-Without global `turbo`, use your package manager:
+Or run services individually:
 
-```sh
-cd my-turborepo
-npx turbo dev
-bun exec turbo dev
-bun exec turbo dev
-```
+- **Frontend:** `cd apps/frontend && bun dev` (Runs on `http://localhost:3000`)
+- **Backend:** `cd apps/backend && bun dev` (Runs on `http://localhost:3001`)
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+---
 
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
+## 🔒 Confidentiality & Authorship Covenant
 
-```sh
-turbo dev --filter=web
-```
+This project is submitted under strict proprietary terms. In accordance with the [LICENSE](LICENSE):
+- The original authorship credit of **Surya Sushad** must never be removed, obscured, or replaced under any circumstance.
+- Any deployment, modification, fork, or integration of this project by the receiving company must maintain visible attribution to Surya Sushad across code headers, documentation, manifests, and interfaces.
 
-Without global `turbo`:
-
-```sh
-npx turbo dev --filter=web
-bun exec turbo dev --filter=web
-bun exec turbo dev --filter=web
-```
-
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended):
-
-```sh
-cd my-turborepo
-turbo login
-```
-
-Without global `turbo`, use your package manager:
-
-```sh
-cd my-turborepo
-npx turbo login
-bun exec turbo login
-bun exec turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed:
-
-```sh
-turbo link
-```
-
-Without global `turbo`:
-
-```sh
-npx turbo link
-bun exec turbo link
-bun exec turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+For licensing, commercial inquiries, or full rights transfer discussions:
+- **Author:** Surya Sushad
+- **Email:** [suryasushad@icloud.com](mailto:suryasushad@icloud.com)
+- **GitHub:** [https://github.com/Sury41322](https://github.com/Sury41322)

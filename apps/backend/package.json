@@ -1,0 +1,34 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "AI Technical Interview Backend API Service authored by Surya Sushad",
+  "author": {
+    "name": "Surya Sushad",
+    "email": "suryasushad@icloud.com",
+    "url": "https://github.com/Sury41322"
+  },
+  "license": "SEE LICENSE IN ../../LICENSE",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "prisma": "5.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "scripts": {
+    "dev": "bun run --watch index.ts",
+    "postinstall": "prisma skills sync || exit 0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.20.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.2.1",
+    "livekit-server-sdk": "^2.19.1"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "AI Technical Interview Frontend Interface authored by Surya Sushad",
+  "author": {
+    "name": "Surya Sushad",
+    "email": "suryasushad@icloud.com",
+    "url": "https://github.com/Sury41322"
+  },
+  "license": "SEE LICENSE IN ../../LICENSE",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "start": "NODE_ENV=production bun src/index.ts",
+    "build": "bun run build.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@livekit/components-react": "^2.9.24",
+    "@met4citizen/talkinghead": "^1.7.0",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.3",
+    "bun-plugin-tailwind": "^0.1.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "livekit-client": "^2.22.4",
+    "lucide-react": "^1",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-router": "^8.4.0",
+    "react-router-dom": "^7.18.4",
+    "sonner": "^2.0.8",
+    "tailwind-merge": "^3.3.1",
+    "three": "^0.186.1",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.186.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}

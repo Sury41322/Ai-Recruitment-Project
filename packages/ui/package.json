@@ -1,6 +1,13 @@
 {
   "name": "@repo/ui",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Shared UI Component Library authored by Surya Sushad",
+  "author": {
+    "name": "Surya Sushad",
+    "email": "suryasushad@icloud.com",
+    "url": "https://github.com/Sury41322"
+  },
+  "license": "SEE LICENSE IN ../../LICENSE",
   "private": true,
   "exports": {
     "./*": "./src/*.tsx"
